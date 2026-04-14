@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowPharm - Premium Products</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #9c27b0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-style: italic;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .product {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product h3 {
+            color: #9c27b0;
+            margin-top: 0;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4caf50;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #7b1fa2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #333;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: white;
+        }
+        .payment-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+        .nav-links {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .nav-links a {
+            color: #9c27b0;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ShadowPharm</h1>
+            <p class="tagline">Premium products for discerning customers</p>
+        </header>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="affiliate.html">Affiliate Program</a>
+            <a href="terms.html">Terms of Service</a>
+        </nav>
+
+        <div class="product-grid">
+            <div class="product">
+                <h3>Pure Bliss</h3>
+                <p>Experience ultimate relaxation with our premium blend. Fast-acting and long-lasting effects.</p>
+                <div class="price">0.015 BTC</div>
+                <button onclick="showPayment('Pure Bliss', '0.015 BTC')">Order Now</button>
+            </div>
+
+            <div class="product">
+                <h3>Eternal High</h3>
+                <p>Our most potent formula. Not for beginners. Elevate your consciousness to new dimensions.</p>
+                <div class="price">0.025 BTC</div>
+                <button onclick="showPayment('Eternal High', '0.025 BTC')">Order Now</button>
+            </div>
+
+            <div class="product">
+                <h3>Mind Melter</h3>
+                <p>Break through the barriers of perception. A journey you won't forget.</p>
+                <div class="price">0.02 BTC</div>
+                <button onclick="showPayment('Mind Melter', '0.02 BTC')">Order Now</button>
+            </div>
+
+            <div class="product">
+                <h3>Cosmic Journey</h3>
+                <p>Explore the universe within. Perfect for introspective experiences.</p>
+                <div class="price">0.018 BTC</div>
+                <button onclick="showPayment('Cosmic Journey', '0.018 BTC')">Order Now</button>
+            </div>
+
+            <div class="product">
+                <h3>Lucid Dreams</h3>
+                <p>Enhance your creativity and unlock your subconscious potential.</p>
+                <div class="price">0.022 BTC</div>
+                <button onclick="showPayment('Lucid Dreams', '0.022 BTC')">Order Now</button>
+            </div>
+
+            <div class="product">
+                <h3>Reality Bender</h3>
+                <p>Question everything you know. A transformative experience.</p>
+                <div class="price">0.03 BTC</div>
+                <button onclick="showPayment('Reality Bender', '0.03 BTC')">Order Now</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 ShadowPharm. All rights reserved.</p>
+            <p>For entertainment purposes only. All products are novelty items.</p>
+        </footer>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Complete Your Order</h2>
+            <p id="orderDetails"></p>
+            <div class="payment-info">
+                <p>Send payment to:</p>
+                <p id="walletAddress">YOUR_WALLET_ADDRESS_HERE</p>
+            </div>
+            <p>After payment, you will receive a confirmation email with tracking information.</p>
+            <p>Delivery time: 7-14 business days</p>
+            <button onclick="confirmOrder()">I've Sent Payment</button>
+        </div>
+    </div>
+
+    <script>
+        function showPayment(product, price) {
+            document.getElementById('orderDetails').textContent = `Product: ${product} | Price: ${price}`;
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function confirmOrder() {
+            alert('Thank you for your order! You will receive a confirmation email shortly.');
+            closeModal();
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
