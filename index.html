@@ -50,6 +50,18 @@
             color: #9c27b0;
             margin-top: 0;
         }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .code-name {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
         .price {
             font-size: 1.2rem;
             font-weight: bold;
@@ -126,6 +138,15 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
+        .disclaimer {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -134,6 +155,10 @@
             <h1>ShadowPharm</h1>
             <p class="tagline">Premium products for discerning customers</p>
         </header>
+
+        <div class="disclaimer">
+            <p>All products are sold as novelty items for research purposes only. Not for human consumption.</p>
+        </div>
 
         <nav class="nav-links">
             <a href="index.html">Home</a>
@@ -144,91 +169,59 @@
 
         <div class="product-grid">
             <div class="product">
-                <h3>Pure Bliss</h3>
-                <p>Experience ultimate relaxation with our premium blend. Fast-acting and long-lasting effects.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Blue+Dragon" alt="Blue Dragon" class="product-image">
+                <h3>Blue Dragon</h3>
+                <p class="code-name">Code: BD-47</p>
+                <p>Premium blue crystalline substance. 98% purity guaranteed. Fast-acting with long-lasting effects.</p>
                 <div class="price">0.015 BTC</div>
-                <button onclick="showPayment('Pure Bliss', '0.015 BTC')">Order Now</button>
+                <button onclick="showPayment('Blue Dragon', '0.015 BTC')">Order Now</button>
             </div>
 
             <div class="product">
-                <h3>Eternal High</h3>
-                <p>Our most potent formula. Not for beginners. Elevate your consciousness to new dimensions.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Purple+Haze" alt="Purple Haze" class="product-image">
+                <h3>Purple Haze</h3>
+                <p class="code-name">Code: PH-92</p>
+                <p>Our most potent formula. Distinctive purple coloration. Not for beginners. Elevate your consciousness to new dimensions.</p>
                 <div class="price">0.025 BTC</div>
-                <button onclick="showPayment('Eternal High', '0.025 BTC')">Order Now</button>
+                <button onclick="showPayment('Purple Haze', '0.025 BTC')">Order Now</button>
             </div>
 
             <div class="product">
-                <h3>Mind Melter</h3>
-                <p>Break through the barriers of perception. A journey you won't forget.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Green+Dream" alt="Green Dream" class="product-image">
+                <h3>Green Dream</h3>
+                <p class="code-name">Code: GD-73</p>
+                <p>Break through the barriers of perception. Fine green powder with crystalline structure. A journey you won't forget.</p>
                 <div class="price">0.02 BTC</div>
-                <button onclick="showPayment('Mind Melter', '0.02 BTC')">Order Now</button>
+                <button onclick="showPayment('Green Dream', '0.02 BTC')">Order Now</button>
             </div>
 
             <div class="product">
-                <h3>Cosmic Journey</h3>
-                <p>Explore the universe within. Perfect for introspective experiences.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Red+Phoenix" alt="Red Phoenix" class="product-image">
+                <h3>Red Phoenix</h3>
+                <p class="code-name">Code: RP-56</p>
+                <p>Explore the universe within. Vibrant red crystals. Perfect for introspective experiences.</p>
                 <div class="price">0.018 BTC</div>
-                <button onclick="showPayment('Cosmic Journey', '0.018 BTC')">Order Now</button>
+                <button onclick="showPayment('Red Phoenix', '0.018 BTC')">Order Now</button>
             </div>
 
             <div class="product">
-                <h3>Lucid Dreams</h3>
-                <p>Enhance your creativity and unlock your subconscious potential.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Yellow+Sunrise" alt="Yellow Sunrise" class="product-image">
+                <h3>Yellow Sunrise</h3>
+                <p class="code-name">Code: YS-81</p>
+                <p>Enhance your creativity and unlock your subconscious potential. Bright yellow crystalline substance.</p>
                 <div class="price">0.022 BTC</div>
-                <button onclick="showPayment('Lucid Dreams', '0.022 BTC')">Order Now</button>
+                <button onclick="showPayment('Yellow Sunrise', '0.022 BTC')">Order Now</button>
             </div>
 
             <div class="product">
-                <h3>Reality Bender</h3>
-                <p>Question everything you know. A transformative experience.</p>
+                <img src="https://via.placeholder.com/300x200/9c27b0/ffffff?text=Black+Hole" alt="Black Hole" class="product-image">
+                <h3>Black Hole</h3>
+                <p class="code-name">Code: BH-99</p>
+                <p>Question everything you know. Deep black substance with unique properties. A transformative experience.</p>
                 <div class="price">0.03 BTC</div>
-                <button onclick="showPayment('Reality Bender', '0.03 BTC')">Order Now</button>
+                <button onclick="showPayment('Black Hole', '0.03 BTC')">Order Now</button>
             </div>
         </div>
 
         <footer>
             <p>&copy; 2023 ShadowPharm. All rights reserved.</p>
-            <p>For entertainment purposes only. All products are novelty items.</p>
-        </footer>
-    </div>
-
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Complete Your Order</h2>
-            <p id="orderDetails"></p>
-            <div class="payment-info">
-                <p>Send payment to:</p>
-                <p id="walletAddress">YOUR_WALLET_ADDRESS_HERE</p>
-            </div>
-            <p>After payment, you will receive a confirmation email with tracking information.</p>
-            <p>Delivery time: 7-14 business days</p>
-            <button onclick="confirmOrder()">I've Sent Payment</button>
-        </div>
-    </div>
-
-    <script>
-        function showPayment(product, price) {
-            document.getElementById('orderDetails').textContent = `Product: ${product} | Price: ${price}`;
-            document.getElementById('paymentModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-
-        function confirmOrder() {
-            alert('Thank you for your order! You will receive a confirmation email shortly.');
-            closeModal();
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('paymentModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
-</body>
-</html>
