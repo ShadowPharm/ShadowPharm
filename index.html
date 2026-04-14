@@ -19,16 +19,39 @@
         header {
             text-align: center;
             margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         h1 {
             color: #9c27b0;
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin: 0;
         }
         .tagline {
             font-style: italic;
             color: #bbb;
             margin-bottom: 20px;
+        }
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #9c27b0;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
         }
         .product-grid {
             display: grid;
@@ -68,6 +91,35 @@
             color: #4caf50;
             margin: 10px 0;
         }
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .quantity-selector button {
+            background-color: #333;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .quantity-selector input {
+            width: 50px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            border: none;
+            margin: 0 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .product-buttons {
+            display: flex;
+            gap: 10px;
+        }
         button {
             background-color: #9c27b0;
             color: white;
@@ -77,6 +129,7 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background-color 0.3s;
+            flex: 1;
         }
         button:hover {
             background-color: #7b1fa2;
@@ -101,13 +154,14 @@
         }
         .modal-content {
             background-color: #2a2a2a;
-            margin: 15% auto;
+            margin: 2% auto;
             padding: 20px;
             border: 1px solid #333;
-            width: 80%;
-            max-width: 500px;
+            width: 90%;
+            max-width: 800px;
             border-radius: 8px;
-            text-align: center;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         .close {
             color: #aaa;
@@ -118,6 +172,65 @@
         }
         .close:hover {
             color: white;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .cart-item-price {
+            font-weight: bold;
+            color: #4caf50;
+        }
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .cart-item-quantity button {
+            background-color: #333;
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin: 0 5px;
+        }
+        .cart-item-quantity span {
+            margin: 0 10px;
+        }
+        .cart-total {
+            text-align: right;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .checkout-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .checkout-button:hover {
+            background-color: #388e3c;
         }
         .payment-info {
             margin: 20px 0;
@@ -147,13 +260,34 @@
             font-size: 0.9rem;
             color: #aaa;
         }
+        .empty-cart {
+            text-align: center;
+            padding: 50px;
+            color: #888;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>ShadowPharm</h1>
-            <p class="tagline">Premium products for discerning customers</p>
+            <div class="header-left">
+                <h1>ShadowPharm</h1>
+                <p class="tagline">Premium products for discerning customers</p>
+            </div>
+            <div class="header-right">
+                <div class="cart-icon" onclick="showCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
         </header>
 
         <div class="disclaimer">
@@ -169,24 +303,7 @@
 
         <div class="product-grid">
             <div class="product">
-                <img src="https://via.placeholder.com/300x200/2e7d32/ffffff?text=Premium+Buds" alt="Cannabis" class="product-image">
+                <img src="https://picsum.photos/seed/cannabis-buds/300/200.jpg" alt="Premium Buds" class="product-image">
                 <h3>Premium Buds</h3>
                 <p class="code-name">Street names: Weed, Pot, Ganja, Mary Jane</p>
-                <p>High-quality indoor grown flower. Dense buds with strong aroma. 28% THC content.</p>
-                <div class="price">0.012 BTC (1/8 oz)</div>
-                <button onclick="showPayment('Premium Buds', '0.012 BTC')">Order Now</button>
-            </div>
-
-            <div class="product">
-                <img src="https://via.placeholder.com/300x200/ffffff/000000?text=White+Powder" alt="Cocaine" class="product-image">
-                <h3>White Powder</h3>
-                <p class="code-name">Street names: Coke, Blow, Snow, Powder</p>
-                <p>Pure crystalline powder. 92% purity. Straight from the source. No cuts.</p>
-                <div class="price">0.08 BTC (gram)</div>
-                <button onclick="showPayment('White Powder', '0.08 BTC')">Order Now</button>
-            </div>
-
-            <div class="product">
-                <img src="https://via.placeholder.com/300x200/7b1fa2/ffffff?text=Purple+Pills" alt="MDMA" class="product-image">
-                <h3>Purple Pills</h3>
-                <p class="code-name">Street names: Molly, Ecstasy, E, X, Mand
+                <p
