@@ -177,20 +177,8 @@
 
         .products-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Changed from auto-fill to 3 columns */
     gap: 30px;
-}
-
-@media (max-width: 900px) {
-    .products-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .products-container {
-        grid-template-columns: 1fr;
-    }
 }
 
         .product-card {
@@ -423,7 +411,41 @@
             width: 90%;
             max-width: 600px;
             border-radius: 8px;
-            overflow-y: auto;
+            overflow-y: auto;<!-- Product 3: Ice -->
+<div class="product-card">
+    <img src="https://picsum.photos/seed/ice/400/300.jpg" alt="Ice" class="product-img">
+    <div class="product-info">
+        <h3 class="product-name">Ice</h3>
+        <p class="product-description">Crystal methamphetamine (0.5g) of the highest purity. Transparent shards with potent long-lasting effects.</p>
+        <div class="product-options">
+            <div class="product-option">
+                <label for="ice-form">Form</label>
+                <select id="ice-form">
+                    <option value="shards">Crystal Shards</option>
+                    <option value="powder">Powder</option>
+                </select>
+            </div>
+            <div class="product-option">
+                <label for="ice-quantity">Quantity</label>
+                <select id="ice-quantity">
+                    <option value="0.5">0.5g - 0.018 BTC</option>
+                    <option value="1">1g - 0.035 BTC</option>
+                    <option value="2">2g - 0.065 BTC</option>
+                    <option value="3.5">3.5g - 0.110 BTC</option>
+                </select>
+            </div>
+        </div>
+        <div class="product-price">0.018 BTC</div>
+        <div class="product-purity">
+            <span>Purity:</span>
+            <div class="purity-bar">
+                <div class="purity-fill" style="width: 98%"></div>
+            </div>
+            <span>98%</span>
+        </div>
+        <button class="btn" onclick="addToCart('Ice', 0.018, 'https://picsum.photos/seed/ice/400/300.jpg', 'Form: Crystal Shards, Quantity: 0.5g')">Add to Cart</button>
+    </div>
+</div>
             position: relative;
         }
 
@@ -951,40 +973,40 @@
                 </div>
 
                 <!-- Product 3: Ice -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/seed/ice/400/300.jpg" alt="Ice" class="product-img">
-                    <div class="product-info">
-                        <h3 class="product-name">Ice</h3>
-                        <p class="product-description">Crystal methamphetamine (0.5g) of the highest purity. Transparent shards with potent long-lasting effects.</p>
-                        <div class="product-options">
-                            <div class="product-option">
-                                <label for="ice-form">Form</label>
-                                <select id="ice-form">
-                                    <option value="shards">Crystal Shards</option>
-                                    <option value="powder">Powder</option>
-                                </select>
-                            </div>
-                            <div class="product-option">
-                                <label for="ice-quantity">Quantity</label>
-                                <select id="ice-quantity">
-                                    <option value="0.5">0.5g - 0.018 BTC</option>
-                                    <option value="1">1g - 0.035 BTC</option>
-                                    <option value="2">2g - 0.065 BTC</option>
-                                    <option value="3.5">3.5g - 0.110 BTC</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="product-price">0.018 BTC</div>
-                        <div class="product-purity">
-                            <span>Purity:</span>
-                            <div class
-                                <div class="purity-fill" style="width: 98%"></div>
-                        </div>
-                        <span>98%</span>
-                    </div>
-                    <button class="btn" onclick="addToCart('Ice', 0.018, 'https://picsum.photos/seed/ice/400/300.jpg', 'Form: Crystal Shards, Quantity: 0.5g')">Add to Cart</button>
-                </div>
+<div class="product-card">
+    <img src="https://picsum.photos/seed/ice/400/300.jpg" alt="Ice" class="product-img">
+    <div class="product-info">
+        <h3 class="product-name">Ice</h3>
+        <p class="product-description">Crystal methamphetamine (0.5g) of the highest purity. Transparent shards with potent long-lasting effects.</p>
+        <div class="product-options">
+            <div class="product-option">
+                <label for="ice-form">Form</label>
+                <select id="ice-form">
+                    <option value="shards">Crystal Shards</option>
+                    <option value="powder">Powder</option>
+                </select>
             </div>
+            <div class="product-option">
+                <label for="ice-quantity">Quantity</label>
+                <select id="ice-quantity">
+                    <option value="0.5">0.5g - 0.018 BTC</option>
+                    <option value="1">1g - 0.035 BTC</option>
+                    <option value="2">2g - 0.065 BTC</option>
+                    <option value="3.5">3.5g - 0.110 BTC</option>
+                </select>
+            </div>
+        </div>
+        <div class="product-price">0.018 BTC</div>
+        <div class="product-purity">
+            <span>Purity:</span>
+            <div class="purity-bar">
+                <div class="purity-fill" style="width: 98%"></div>
+            </div>
+            <span>98%</span>
+        </div>
+        <button class="btn" onclick="addToCart('Ice', 0.018, 'https://picsum.photos/seed/ice/400/300.jpg', 'Form: Crystal Shards, Quantity: 0.5g')">Add to Cart</button>
+    </div>
+</div>
 
             <!-- Product 4: Smack -->
             <div class="product-card">
