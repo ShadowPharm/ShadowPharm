@@ -895,104 +895,104 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Our Premium Products</h2>
-            <div class="products-container">
-                <!-- Product 1: Bud -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/seed/bud/400/300.jpg" alt="Bud" class="product-img">
-                    <div class="product-info">
-                        <h3 class="product-name">Bud</h3>
-                        <p class="product-description">Premium grade cannabis (3.5g) with high THC content. Smooth, potent, and perfectly cured for the ultimate experience.</p>
-                        <div class="product-options">
-                            <div class="product-option">
-                                <label for="bud-strain">Strain Type</label>
-                                <select id="bud-strain">
-                                    <option value="sativa">Sativa</option>
-                                    <option value="indica">Indica</option>
-                                    <option value="hybrid">Hybrid</option>
-                                </select>
-                            </div>
-                            <div class="product-option">
-                                <label for="bud-quantity">Quantity</label>
-                                <select id="bud-quantity">
-                                    <option value="3.5">3.5g - 0.00075 BTC</option>
-                                    <option value="7">7g - 0.00150 BTC</option>
-                                    <option value="14">14g - 0.00250 BTC</option>
-                                    <option value="28">28g - 0.00450 BTC</option>
-                                </select>
-                            </div>
+<section id="products" class="products">
+    <div class="container">
+        <h2 class="section-title">Our Premium Products</h2>
+        <div class="products-container">
+            <!-- Product 1: Bud -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/bud/400/300.jpg" alt="Bud" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Bud</h3>
+                    <p class="product-description">Premium grade cannabis (3.5g) with high THC content. Smooth, potent, and perfectly cured for the ultimate experience.</p>
+                    <div class="product-options">
+                        <div class="product-option">
+                            <label for="bud-strain">Strain Type</label>
+                            <select id="bud-strain" onchange="updateProductButton('bud')">
+                                <option value="sativa">Sativa</option>
+                                <option value="indica">Indica</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
                         </div>
-                        <div class="product-price">0.00075 BTC</div>
-                        <div class="product-purity">
-                            <span>Purity:</span>
-                            <div class="purity-bar">
-                                <div class="purity-fill" style="width: 92%"></div>
-                            </div>
-                            <span>92%</span>
+                        <div class="product-option">
+                            <label for="bud-quantity">Quantity</label>
+                            <select id="bud-quantity" onchange="updateProductButton('bud')">
+                                <option value="3.5" data-price="0.00075">3.5g - 0.00075 BTC</option>
+                                <option value="7" data-price="0.00150">7g - 0.00150 BTC</option>
+                                <option value="14" data-price="0.00250">14g - 0.00250 BTC</option>
+                                <option value="28" data-price="0.00450">28g - 0.00450 BTC</option>
+                            </select>
                         </div>
-                        <button class="btn" onclick="addToCart('Bud', 0.00075, 'https://picsum.photos/seed/bud/400/300.jpg', 'Strain: Sativa, Quantity: 3.5g')">Add to Cart</button>
                     </div>
-                </div>
-
-                <!-- Product 2: Snow -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/seed/snow/400/300.jpg" alt="Snow" class="product-img">
-                    <div class="product-info">
-                        <h3 class="product-name">Snow</h3>
-                        <p class="product-description">Pure white coke powder (1g) with exceptional quality. Fine texture and consistent potency throughout.</p>
-                        <div class="product-options">
-                            <div class="product-option">
-                                <label for="snow-quantity">Quantity</label>
-                                <select id="snow-quantity">
-                                    <option value="1">1g - 0.00162 BTC</option>
-                                    <option value="3">3g - 0.00486 BTC</option>
-                                    <option value="5">5g - 0.00810 BTC</option>
-                                    <option value="8">8g - 0.01296 BTC</option>
-                                </select>
-                            </div>
+                    <div class="product-price" id="bud-price">0.00075 BTC</div>
+                    <div class="product-purity">
+                        <span>Purity:</span>
+                        <div class="purity-bar">
+                            <div class="purity-fill" style="width: 92%"></div>
                         </div>
-                        <div class="product-price">0.00162 BTC</div>
-                        <div class="product-purity">
-                            <span>Purity:</span>
-                            <div class="purity-bar">
-                                <div class="purity-fill" style="width: 96%"></div>
-                            </div>
-                            <span>96%</span>
-                        </div>
-                        <button class="btn" onclick="addToCart('Snow', 0.00162, 'https://picsum.photos/seed/snow/400/300.jpg', 'Quantity: 1g')">Add to Cart</button>
+                        <span>92%</span>
                     </div>
+                    <button class="btn" id="bud-add-btn" onclick="addToCart('Bud', 0.00075, 'https://picsum.photos/seed/bud/400/300.jpg', 'Strain: Sativa, Quantity: 3.5g')">Add to Cart</button>
                 </div>
+            </div>
 
-                <!-- Product 3: Ice -->
-<div class="product-card">
-    <img src="https://picsum.photos/seed/ice/400/300.jpg" alt="Ice" class="product-img">
-    <div class="product-info">
-        <h3 class="product-name">Ice</h3>
-        <p class="product-description">Crystal methamphetamine (0.5g) of the highest purity. Transparent shards with potent long-lasting effects.</p>
-        <div class="product-options">
-            <div class="product-option">
-                <label for="ice-quantity">Quantity</label>
-                <select id="ice-quantity">
-                    <option value="0.5">0.5g - 0.00018 BTC</option>
-                    <option value="1">1g - 0.00030 BTC</option>
-                    <option value="2">2g - 0.00080 BTC</option>
-                    <option value="3.5">3.5g - 0.00100 BTC</option>
-                </select>
+            <!-- Product 2: Snow -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/snow/400/300.jpg" alt="Snow" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Snow</h3>
+                    <p class="product-description">Pure white coke powder (1g) with exceptional quality. Fine texture and consistent potency throughout.</p>
+                    <div class="product-options">
+                        <div class="product-option">
+                            <label for="snow-quantity">Quantity</label>
+                            <select id="snow-quantity" onchange="updateProductButton('snow')">
+                                <option value="1" data-price="0.00162">1g - 0.00162 BTC</option>
+                                <option value="3" data-price="0.00486">3g - 0.00486 BTC</option>
+                                <option value="5" data-price="0.00810">5g - 0.00810 BTC</option>
+                                <option value="8" data-price="0.01296">8g - 0.01296 BTC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product-price" id="snow-price">0.00162 BTC</div>
+                    <div class="product-purity">
+                        <span>Purity:</span>
+                        <div class="purity-bar">
+                            <div class="purity-fill" style="width: 96%"></div>
+                        </div>
+                        <span>96%</span>
+                    </div>
+                    <button class="btn" id="snow-add-btn" onclick="addToCart('Snow', 0.00162, 'https://picsum.photos/seed/snow/400/300.jpg', 'Quantity: 1g')">Add to Cart</button>
+                </div>
             </div>
-        </div>
-        <div class="product-price">0.00018 BTC</div>
-        <div class="product-purity">
-            <span>Purity:</span>
-            <div class="purity-bar">
-                <div class="purity-fill" style="width: 98%"></div>
+
+            <!-- Product 3: Ice -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/ice/400/300.jpg" alt="Ice" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Ice</h3>
+                    <p class="product-description">Crystal methamphetamine (0.5g) of the highest purity. Transparent shards with potent long-lasting effects.</p>
+                    <div class="product-options">
+                        <div class="product-option">
+                            <label for="ice-quantity">Quantity</label>
+                            <select id="ice-quantity" onchange="updateProductButton('ice')">
+                                <option value="0.5" data-price="0.00018">0.5g - 0.00018 BTC</option>
+                                <option value="1" data-price="0.00030">1g - 0.00030 BTC</option>
+                                <option value="2" data-price="0.00080">2g - 0.00080 BTC</option>
+                                <option value="3.5" data-price="0.00100">3.5g - 0.00100 BTC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product-price" id="ice-price">0.00018 BTC</div>
+                    <div class="product-purity">
+                        <span>Purity:</span>
+                        <div class="purity-bar">
+                            <div class="purity-fill" style="width: 98%"></div>
+                        </div>
+                        <span>98%</span>
+                    </div>
+                    <button class="btn" id="ice-add-btn" onclick="addToCart('Ice', 0.00018, 'https://picsum.photos/seed/ice/400/300.jpg', 'Quantity: 0.5g')">Add to Cart</button>
+                </div>
             </div>
-            <span>98%</span>
-        </div>
-        <button class="btn" onclick="addToCart('Ice', 0.00018, 'https://picsum.photos/seed/ice/400/300.jpg', 'Quantity: 0.5g')">Add to Cart</button>
-    </div>
-</div>
 
             <!-- Product 4: Smack -->
             <div class="product-card">
@@ -1003,15 +1003,15 @@
                     <div class="product-options">
                         <div class="product-option">
                             <label for="smack-quantity">Quantity</label>
-                            <select id="smack-quantity">
-                                <option value="0.5">0.5g - 0.00085 BTC</option>
-                                <option value="1">1g - 0.00175 BTC</option>
-                                <option value="2">2g - 0.00350 BTC</option>
-                                <option value="3.5">3.5g - 0.00550 BTC</option>
+                            <select id="smack-quantity" onchange="updateProductButton('smack')">
+                                <option value="0.5" data-price="0.00085">0.5g - 0.00085 BTC</option>
+                                <option value="1" data-price="0.00175">1g - 0.00175 BTC</option>
+                                <option value="2" data-price="0.00350">2g - 0.00350 BTC</option>
+                                <option value="3.5" data-price="0.00550">3.5g - 0.00550 BTC</option>
                             </select>
                         </div>
                     </div>
-                    <div class="product-price">0.00085 BTC</div>
+                    <div class="product-price" id="smack-price">0.00085 BTC</div>
                     <div class="product-purity">
                         <span>Purity:</span>
                         <div class="purity-bar">
@@ -1019,7 +1019,7 @@
                         </div>
                         <span>94%</span>
                     </div>
-                    <button class="btn" onclick="addToCart('Smack', 0.00085, 'https://picsum.photos/seed/smack/400/300.jpg', 'Quantity: 0.5g')">Add to Cart</button>
+                    <button class="btn" id="smack-add-btn" onclick="addToCart('Smack', 0.00085, 'https://picsum.photos/seed/smack/400/300.jpg', 'Quantity: 0.5g')">Add to Cart</button>
                 </div>
             </div>
 
@@ -1032,15 +1032,15 @@
                     <div class="product-options">
                         <div class="product-option">
                             <label for="molly-quantity">Quantity</label>
-                            <select id="molly-quantity">
-                                <option value="2">2 pills - 0.00127 BTC</option>
-                                <option value="5">5 pills - 0.00206 BTC</option>
-                                <option value="10">10 pills - 0.00400 BTC</option>
-                                <option value="20">20 pills - 0.01000 BTC</option>
+                            <select id="molly-quantity" onchange="updateProductButton('molly')">
+                                <option value="2" data-price="0.00127">2 pills - 0.00127 BTC</option>
+                                <option value="5" data-price="0.00206">5 pills - 0.00206 BTC</option>
+                                <option value="10" data-price="0.00400">10 pills - 0.00400 BTC</option>
+                                <option value="20" data-price="0.01000">20 pills - 0.01000 BTC</option>
                             </select>
                         </div>
                     </div>
-                    <div class="product-price">0.00127 BTC</div>
+                    <div class="product-price" id="molly-price">0.00127 BTC</div>
                     <div class="product-purity">
                         <span>Purity:</span>
                         <div class="purity-bar">
@@ -1048,7 +1048,7 @@
                         </div>
                         <span>97%</span>
                     </div>
-                    <button class="btn" onclick="addToCart('Molly', 0.00127, 'https://picsum.photos/seed/molly/400/300.jpg', 'Quantity: 2 pills')">Add to Cart</button>
+                    <button class="btn" id="molly-add-btn" onclick="addToCart('Molly', 0.00127, 'https://picsum.photos/seed/molly/400/300.jpg', 'Quantity: 2 pills')">Add to Cart</button>
                 </div>
             </div>
 
@@ -1061,15 +1061,15 @@
                     <div class="product-options">
                         <div class="product-option">
                             <label for="afeem-quantity">Quantity</label>
-                            <select id="afeem-quantity">
-                                <option value="1">1 ball (5g) - 0.00271 BTC</option>
-                                <option value="2">2 balls (10g) - 0.00541 BTC</option>
-                                <option value="3">3 balls (15g) - 0.00812 BTC</option>
-                                <option value="5">5 balls (25g) - 0.01800 BTC</option>
+                            <select id="afeem-quantity" onchange="updateProductButton('afeem')">
+                                <option value="1" data-price="0.00271">1 ball (5g) - 0.00271 BTC</option>
+                                <option value="2" data-price="0.00541">2 balls (10g) - 0.00541 BTC</option>
+                                <option value="3" data-price="0.00812">3 balls (15g) - 0.00812 BTC</option>
+                                <option value="5" data-price="0.01800">5 balls (25g) - 0.01800 BTC</option>
                             </select>
                         </div>
                     </div>
-                    <div class="product-price">0.00271 BTC</div>
+                    <div class="product-price" id="afeem-price">0.00271 BTC</div>
                     <div class="product-purity">
                         <span>Purity:</span>
                         <div class="purity-bar">
@@ -1077,7 +1077,7 @@
                         </div>
                         <span>95%</span>
                     </div>
-                    <button class="btn" onclick="addToCart('Afeem', 0.00271, 'https://picsum.photos/seed/afeem/400/300.jpg', 'Quantity: 1 ball (5g)')">Add to Cart</button>
+                    <button class="btn" id="afeem-add-btn" onclick="addToCart('Afeem', 0.00271, 'https://picsum.photos/seed/afeem/400/300.jpg', 'Quantity: 1 ball (5g)')">Add to Cart</button>
                 </div>
             </div>
 
@@ -1090,15 +1090,15 @@
                     <div class="product-options">
                         <div class="product-option">
                             <label for="tusi-quantity">Quantity</label>
-                            <select id="tusi-quantity">
-                                <option value="1">1g - 0.00061 BTC</option>
-                                <option value="3">3g - 0.00180 BTC</option>
-                                <option value="5">5g - 0.00300 BTC</option>
-                                <option value="8">8g - 0.00528 BTC</option>
+                            <select id="tusi-quantity" onchange="updateProductButton('tusi')">
+                                <option value="1" data-price="0.00061">1g - 0.00061 BTC</option>
+                                <option value="3" data-price="0.00180">3g - 0.00180 BTC</option>
+                                <option value="5" data-price="0.00300">5g - 0.00300 BTC</option>
+                                <option value="8" data-price="0.00528">8g - 0.00528 BTC</option>
                             </select>
                         </div>
                     </div>
-                    <div class="product-price">0.00061 BTC</div>
+                    <div class="product-price" id="tusi-price">0.00061 BTC</div>
                     <div class="product-purity">
                         <span>Purity:</span>
                         <div class="purity-bar">
@@ -1106,11 +1106,34 @@
                         </div>
                         <span>93%</span>
                     </div>
-                    <button class="btn" onclick="addToCart('Tusi', 0.00061, 'https://picsum.photos/seed/tusi/400/300.jpg', 'Quantity: 1g')">Add to Cart</button>
+                    <button class="btn" id="tusi-add-btn" onclick="addToCart('Tusi', 0.00061, 'https://picsum.photos/seed/tusi/400/300.jpg', 'Quantity: 1g')">Add to Cart</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+function updateProductButton(productId) {
+    const select = document.getElementById(productId + '-quantity');
+    const selectedOption = select.options[select.selectedIndex];
+    const price = selectedOption.getAttribute('data-price');
+    const quantity = selectedOption.value;
+    const quantityText = selectedOption.text.split(' - ')[0];
+    
+    document.getElementById(productId + '-price').textContent = price + ' BTC';
+    
+    let details = 'Quantity: ' + quantityText;
+    if (productId === 'bud') {
+        const strainSelect = document.getElementById('bud-strain');
+        const strainText = strainSelect.options[strainSelect.selectedIndex].text;
+        details = 'Strain: ' + strainText + ', ' + details;
+    }
+    
+    document.getElementById(productId + '-add-btn').setAttribute('onclick', 
+        `addToCart('${productId.charAt(0).toUpperCase() + productId.slice(1)}', ${price}, 'https://picsum.photos/seed/${productId}/400/300.jpg', '${details}')`);
+}
+</script>
 
     <!-- About Section -->
     <section id="about" class="about">
