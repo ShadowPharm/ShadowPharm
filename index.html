@@ -910,24 +910,24 @@
                     <h3 class="product-name">Bud</h3>
                     <p class="product-description">Premium grade cannabis (3.5g) with high THC content. Smooth, potent, and perfectly cured for the ultimate experience.</p>
                     <div class="product-options">
-                        <div class="product-option">
-                            <label for="bud-strain">Strain Type</label>
-                            <select id="bud-strain">
-                                <option value="0">Sativa</option>
-                                <option value="0">Indica</option>
-                                <option value="0">Hybrid</option>
-                            </select>
-                        </div>
-                        <div class="product-option">
-                            <label for="bud-quantity">Quantity</label>
-                            <select id="bud-quantity" onchange="updateProductButton('bud')">
-                                <option value="3.5" data-price="0.00075">3.5g - 0.00075 BTC</option>
-                                <option value="7" data-price="0.00150">7g - 0.00150 BTC</option>
-                                <option value="14" data-price="0.00250">14g - 0.00250 BTC</option>
-                                <option value="28" data-price="0.00450">28g - 0.00450 BTC</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="product-option">
+        <label for="bud-quantity">Quantity & Strain</label>
+        <select id="bud-quantity" onchange="updateProductButton('bud')">
+            <option value="3.5" data-price="0.00075" data-strain="Sativa">3.5g Sativa - 0.00075 BTC</option>
+            <option value="3.5" data-price="0.00075" data-strain="Indica">3.5g Indica - 0.00075 BTC</option>
+            <option value="3.5" data-price="0.00075" data-strain="Hybrid">3.5g Hybrid - 0.00075 BTC</option>
+            <option value="7" data-price="0.00150" data-strain="Sativa">7g Sativa - 0.00150 BTC</option>
+            <option value="7" data-price="0.00150" data-strain="Indica">7g Indica - 0.00150 BTC</option>
+            <option value="7" data-price="0.00150" data-strain="Hybrid">7g Hybrid - 0.00150 BTC</option>
+            <option value="14" data-price="0.00250" data-strain="Sativa">14g Sativa - 0.00250 BTC</option>
+            <option value="14" data-price="0.00250" data-strain="Indica">14g Indica - 0.00250 BTC</option>
+            <option value="14" data-price="0.00250" data-strain="Hybrid">14g Hybrid - 0.00250 BTC</option>
+            <option value="28" data-price="0.00450" data-strain="Sativa">28g Sativa - 0.00450 BTC</option>
+            <option value="28" data-price="0.00450" data-strain="Indica">28g Indica - 0.00450 BTC</option>
+            <option value="28" data-price="0.00450" data-strain="Hybrid">28g Hybrid - 0.00450 BTC</option>
+        </select>
+    </div>
+</div>
                     <div class="product-price" id="bud-price">0.00075 BTC</div>
                     <div class="product-purity">
                         <span>Purity:</span>
