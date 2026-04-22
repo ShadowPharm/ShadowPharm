@@ -1787,5 +1787,42 @@ function updateProductButton(productId) {
             }, 3000);
         }
     </script>
+                        <script>
+function updateStrainOnly(productId) {
+    // Get the selected strain
+    const strainSelect = document.getElementById(productId + '-strain');
+    const strain = strainSelect.options[strainSelect.selectedIndex].text;
+    
+    // Get current quantity and price
+    const quantitySelect = document.getElementById(productId + '-quantity');
+    const selectedOption = quantitySelect.options[quantitySelect.selectedIndex];
+    const quantity = selectedOption.value;
+    const price = selectedOption.getAttribute('data-price');
+    
+    // Update button with same price but new strain
+    const addButton = document.getElementById(productId + '-add-btn');
+    addButton.setAttribute('onclick', `addToCart('${productId}', ${price}, 'https://picsum.photos/seed/${productId}/400/300.jpg', 'Strain: ${strain}, Quantity: ${quantity}g')`);
+}
+
+function updateProductButton(productId) {
+    // Get the selected quantity option
+    const quantitySelect = document.getElementById(productId + '-quantity');
+    const selectedOption = quantitySelect.options[quantitySelect.selectedIndex];
+    
+    // Update price display
+    const priceDisplay = document.getElementById(productId + '-price');
+    const price = selectedOption.getAttribute('data-price');
+    priceDisplay.textContent = price + ' BTC';
+    
+    // Get current strain
+    const strainSelect = document.getElementById(productId + '-strain');
+    const strain = strainSelect.options[strainSelect.selectedIndex].text;
+    const quantity = selectedOption.value;
+    
+    // Update add to cart button
+    const addButton = document.getElementById(productId + '-add-btn');
+    addButton.setAttribute('onclick', `addToCart('${productId}', ${price}, 'https://picsum.photos/seed/${productId}/400/300.jpg', 'Strain: ${strain}, Quantity: ${quantity}g')`);
+}
+</script>
 </body>
 </html>
